@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, MapPin, ShieldCheck, ArrowUp, Paintbrush } from 'lucide-react';
+import { Phone, Mail, MapPin, ShieldCheck, ArrowUp, Paintbrush, Sparkles } from 'lucide-react';
 import { BrandLogo } from './BrandLogo';
 
 export const Footer: React.FC = () => {
@@ -41,13 +41,19 @@ export const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
+                <a href="#services" className="text-slate-300 hover:text-[#009FE3] transition-colors">PU Polish (Polyurethane)</a>
+              </li>
+              <li>
+                <a href="#services" className="text-slate-300 hover:text-[#009FE3] transition-colors">Hand Polish & Spirit Polish</a>
+              </li>
+              <li>
+                <a href="#services" className="text-slate-300 hover:text-[#009FE3] transition-colors">Surface Lamination & Edging</a>
+              </li>
+              <li>
+                <a href="#services" className="text-slate-300 hover:text-[#009FE3] transition-colors">Decco (Duco) Spray Paint</a>
+              </li>
+              <li>
                 <a href="#services" className="hover:text-white transition-colors">Wall Textures & Italian Stucco</a>
-              </li>
-              <li>
-                <a href="#services" className="hover:text-white transition-colors">Scientific Waterproofing</a>
-              </li>
-              <li>
-                <a href="#color-studio" className="hover:text-white transition-colors">Interactive Color Studio</a>
               </li>
               <li>
                 <a href="#services" className="hover:text-white transition-colors">Luxury Sofas & Upholstery</a>
@@ -57,9 +63,6 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <a href="#services" className="hover:text-white transition-colors">Architectural Flooring & Marble Polish</a>
-              </li>
-              <li>
-                <a href="#services" className="hover:text-white transition-colors">Turnkey Modular Kitchens</a>
               </li>
             </ul>
           </div>
@@ -81,15 +84,24 @@ export const Footer: React.FC = () => {
                 <Phone className="w-4 h-4 text-[#009FE3] shrink-0 mt-0.5" />
                 <div className="space-y-1">
                   <div className="flex items-center gap-2">
-                    <a href="tel:8268727572" className="text-white font-mono font-semibold hover:text-[#009FE3]">
-                      82687 27572
-                    </a>
-                    <span>·</span>
-                    <a href="tel:9324332784" className="text-white font-mono font-semibold hover:text-[#009FE3]">
-                      93243 32784
+                    <a href="tel:8956216889" className="text-white font-mono font-semibold hover:text-[#009FE3] text-sm">
+                      89562 16889
                     </a>
                   </div>
-                  <span className="text-[11px] text-slate-500 block">Mon - Sun: 8:30 AM to 9:00 PM</span>
+                  <span className="text-[11px] text-slate-500 block">Direct Line · Mon - Sun: 8:30 AM to 9:00 PM</span>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-2.5">
+                <Mail className="w-4 h-4 text-[#009FE3] shrink-0 mt-0.5" />
+                <div className="space-y-1">
+                  <a
+                    href="mailto:sahaniinteriors98@gmail.com"
+                    className="text-white hover:text-[#009FE3] font-medium transition-colors break-all"
+                  >
+                    sahaniinteriors98@gmail.com
+                  </a>
+                  <span className="text-[11px] text-slate-500 block">Direct email for drawings, plans & quotations</span>
                 </div>
               </div>
 

@@ -114,18 +114,20 @@ export const ProcessSection: React.FC = () => {
             </p>
           </div>
 
-          <div className="flex items-center gap-3 shrink-0">
+          <div className="flex flex-wrap items-center gap-3 shrink-0">
             <a
-              href="tel:8268727572"
+              href="tel:8956216889"
               className="px-5 py-2.5 rounded-lg bg-[#009FE3] hover:bg-[#0284c7] text-white text-xs font-bold shadow-lg transition-all"
             >
-              Call 82687 27572
+              Call 89562 16889
             </a>
             <a
-              href="tel:9324332784"
-              className="px-5 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold border border-slate-700 transition-all"
+              href="https://wa.me/918956216889?text=Hello%20Sahani%20Interiors!%20I%20would%20like%20to%20book%20a%20site%20visit."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-5 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold border border-emerald-500/40 transition-all"
             >
-              Call 93243 32784
+              WhatsApp Us
             </a>
           </div>
         </div>

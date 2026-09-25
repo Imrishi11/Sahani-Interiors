@@ -53,14 +53,42 @@ export const ChatBot: React.FC<ChatBotProps> = ({ isOpen, onToggle, onClose, onO
       setLeadCaptured(true);
       return {
         reply: `Thank you! I have registered your contact number (+91-${phoneMatch[0]}). Our project supervisor will call you shortly to discuss your home painting or interior requirements. Please feel free to share your property address below!`,
-        options: ['House Painting Services', 'Luxury Sofas', 'Call 8268727572'],
+        options: ['House Painting Services', 'PU Polish & Finishes', 'Call 8956216889'],
+      };
+    }
+
+    if (text.includes('pu') || text.includes('pu polish') || text.includes('polyurethane')) {
+      return {
+        reply: `We specialize in Italian PU (Polyurethane) Polish for doors, wooden veneers, and fine cabinetry! Available in 100% mirror High-Gloss and deep Satin Matte finishes. It provides non-yellowing UV resistance, heat shielding, and superior scratch protection.`,
+        options: ['High-Gloss PU', 'Matte PU Polish', 'Request PU Quote'],
+      };
+    }
+
+    if (text.includes('hand polish') || text.includes('french polish') || text.includes('spirit polish') || text.includes('teak polish')) {
+      return {
+        reply: `Our Hand Polish is executed by traditional master artisans using genuine French spirit and dewaxed shellac rubbing. It brings out the authentic deep amber grain of natural Burma teak and rosewood, topped with an optional protective melamine sealer.`,
+        options: ['Teak Wood Hand Polish', 'French Spirit Polish', 'Call 8956216889'],
+      };
+    }
+
+    if (text.includes('lamination') || text.includes('laminate') || text.includes('laminating')) {
+      return {
+        reply: `We provide precision architectural surface lamination using 1.0mm to 1.5mm high-pressure decorative sheets (Merino, Century, Greenlam) with bubble-free cold-press bonding and factory machine PVC edge-banding against moisture ingress.`,
+        options: ['Matte & Fluted Laminates', 'Acrylic Lamination', 'Book Site Measurement'],
+      };
+    }
+
+    if (text.includes('decco') || text.includes('deco') || text.includes('duco')) {
+      return {
+        reply: `Our Decco (Duco) Spray Paint delivers an automotive-grade, porcelain-smooth lacquer finish with zero brushmarks or roller orange-peel. Ideal for interior flush doors, MDF CNC jali partitions, French wall moldings, and vanity cabinetry.`,
+        options: ['White Satin Decco', 'High-Gloss Duco Finish', 'Request Decco Quote'],
       };
     }
 
     if (text.includes('paint') || text.includes('colour') || text.includes('color') || text.includes('stucco') || text.includes('texture')) {
       return {
-        reply: `House painting is our signature discipline! We deliver mechanized precision sanding with high-suction vacuum extractors, full plastic masking of your furniture and floors, laser moisture verification, and smooth coats of Asian Paints Royale or Berger Silk. We also handcraft Italian Venetian stucco accent walls.`,
-        options: ['Asian Paints Royale Finishes', 'Italian Stucco Textures', 'Book Site Visit'],
+        reply: `House painting is our signature discipline! We deliver mechanized precision sanding with high-suction vacuum extractors, full plastic masking of your furniture and floors, laser moisture verification, and smooth coats of Asian Paints Royale or Berger Silk. We also provide PU Polish, Hand Polish, Lamination, Decco, and Italian Venetian stucco.`,
+        options: ['Asian Paints Royale Finishes', 'PU Polish & Decco', 'Italian Stucco Textures', 'Book Site Visit'],
       };
     }
 
@@ -99,36 +127,48 @@ export const ChatBot: React.FC<ChatBotProps> = ({ isOpen, onToggle, onClose, onO
       };
     }
 
+    if (text.includes('email') || text.includes('mail')) {
+      return {
+        reply: `You can email our design & estimation team directly at: sahaniinteriors98@gmail.com. We respond within hours with initial consultations, material catalogs, and estimates.`,
+        options: ['Call 8956216889', 'Custom Quotation Form'],
+      };
+    }
+
     if (text.includes('whatsapp')) {
       return {
-        reply: `You can directly message Rishi Sahani and the senior interior team on WhatsApp at +91 8268727572 for immediate quotes, catalog photos, and scheduling.`,
-        options: ['Call 8268727572', 'Our Studio Address'],
+        reply: `You can directly message Rishi Sahani and the senior interior team on WhatsApp at +91 8956216889 for immediate quotes, catalog photos, and scheduling.`,
+        options: ['Call 8956216889', 'Our Studio Address'],
       };
     }
 
     if (text.includes('quote') || text.includes('quotation') || text.includes('cost') || text.includes('price')) {
       return {
         reply: `Every home is unique! To receive an itemized, custom quotation, please head over to our Custom Quotation section below, or share your phone and address right here in chat.`,
-        options: ['House Painting Services', 'Luxury Sofas', 'Call 8268727572'],
+        options: ['House Painting Services', 'PU Polish & Finishes', 'Call 8956216889'],
       };
     }
 
     if (text.includes('address') || text.includes('office') || text.includes('location')) {
       return {
-        reply: `Our headquarters is at: 704, C-Wing, Shri Krishna Heights, Royal Garden Complex, Virar West - 401303, Maharashtra. MSME Reg. No: UDYAM-MH-18-0320878.\nDirect Contact: 8268727572 / 9324332784.`,
-        options: ['Call 8268727572', 'House Painting Services'],
+        reply: `Our headquarters is at: 704, C-Wing, Shri Krishna Heights, Royal Garden Complex, Virar West - 401303, Maharashtra. MSME Reg. No: UDYAM-MH-18-0320878.\nDirect Contact: 8956216889 | Email: sahaniinteriors98@gmail.com`,
+        options: ['Call 8956216889', 'House Painting Services'],
       };
     }
 
     return {
-      reply: `I can assist with our house painting, Italian textures, custom sofas, bespoke woodwork, and marble polishing. What service would you like to explore?`,
-      options: ['House Painting Services', 'Luxury Sofas', 'Bespoke Furniture', 'Flooring & Polish'],
+      reply: `I can assist with our house painting, PU Polish, Hand Polish, Lamination, Decco finish, Italian textures, custom sofas, bespoke woodwork, and marble polishing. What service would you like to explore?`,
+      options: ['House Painting & Polishing', 'PU & Decco Finishes', 'Luxury Sofas', 'Bespoke Furniture'],
     };
   };
 
   const handleSendMessage = (textToSend?: string) => {
     const messageText = textToSend || input;
     if (!messageText.trim()) return;
+
+    if (messageText.includes('Call 8956216889') || messageText === 'Call 8956216889') {
+      window.location.href = 'tel:8956216889';
+      return;
+    }
 
     if (messageText === 'Book Site Visit' || messageText === 'Book Free Measurement') {
       onOpenEnquiry('Free Measurement & Site Inspection');

@@ -5,43 +5,93 @@ export const ReviewsSection: React.FC = () => {
   const reviews = [
     {
       name: 'Rohan Deshmukh',
-      locality: 'Royal Garden Complex, Virar West',
-      property: '3 BHK Complete Repaint & False Ceiling',
+      locality: 'Santacruz',
+      property: '3 BHK Painting & Italian Stucco Wall',
       rating: 5,
-      date: 'February 2026',
       content:
-        'Finding reliable professionals who respect your home is tough. Sahani Interiors completely masked our Italian marble floors and all furniture with plastic sheets. Their mechanized sanding left our home spotlessly clean. The Asian Paints Royale cyan accent wall came out gorgeous!',
+        'Finding reliable painters in Santacruz who respect high-end furnished apartments is tough. Sahani Interiors completely masked our floors and furniture with thick plastic sheets. Mechanized vacuum sanding kept the apartment dust-free, and the Asian Paints Royale velvet finish came out flawless!',
       tag: 'Verified Homeowner',
     },
     {
       name: 'Priyanka & Amit Shah',
-      locality: 'Evershine City, Vasai East',
-      property: '2 BHK Fresh Painting, Custom Sofa & Modular Kitchen',
+      locality: 'Powai',
+      property: 'Luxury PU Polish & Custom L-Shape Velvet Sofa',
       rating: 5,
-      date: 'January 2026',
       content:
-        'We compared quotations with multiple top interior contractors. Sahani Interiors was by far the most transparent. The custom emerald velvet L-shape sofa and kitchen acrylic cabinets fit like a glove, and the supervisor shared daily photo updates on WhatsApp. Delivered on time in 6 days.',
+        'We compared quotations with multiple interior firms across Powai. Sahani Interiors was by far the most transparent. The Italian PU polish on our main teak entrance door has a breathtaking mirror reflection, and the bespoke velvet couch fits our living room to perfection.',
       tag: 'Turnkey Renovation',
     },
     {
-      name: 'Kavita Sundaram',
-      locality: 'Yashwant Nagar, Virar West',
-      property: 'Moisture Barrier Treatment & Living Room Stucco',
+      name: 'Mohsin Qureshi',
+      locality: 'Kurla',
+      property: 'Full Apartment Painting & Decco Spray Moldings',
       rating: 5,
-      date: 'December 2025',
       content:
-        'We had severe dampness and peeling paint on our balcony-facing wall due to monsoon rains. Their team used moisture meters, injected waterproofing polymers, and crafted a breathtaking Italian Venetian stucco wall. Not a trace of dampness now!',
+        'Remarkable speed and quality for our flat in Kurla near BKC. The white satin Decco finish on our internal doors and French moldings looks like an architectural luxury showroom. Daily photo progress on WhatsApp gave us peace of mind.',
+      tag: 'Interior Finish',
+    },
+    {
+      name: 'Vikram Singhania',
+      locality: 'Malad',
+      property: 'Moisture Barrier Waterproofing & Royale Aspira',
+      rating: 5,
+      content:
+        'We had severe dampness and peeling paint on our balcony-facing wall due to heavy monsoon rains in Malad. Their team used electronic moisture meters, injected damp-barrier polymers, and finished with Royale Aspira. Not a single trace of dampness now!',
       tag: 'Waterproofing Specialist',
     },
     {
-      name: 'Suresh Patil',
-      locality: 'Ambadi Road, Vasai West',
-      property: 'Hydraulic Master Bed, Wardrobe & Marble Polish',
+      name: 'Harshwardhan Jhaveri',
+      locality: 'Mumbadevi',
+      property: 'Heritage Teak Hand Polish & Spirit Polish',
       rating: 5,
-      date: 'March 2026',
       content:
-        'Outstanding craftsmanship on our master bedroom hydraulic bed and floor-to-ceiling sliding wardrobe. The Italian marble diamond polishing gave our 12-year-old floor a crystal mirror reflection. Highly recommended across the region.',
+        'Our ancestral home in Mumbadevi required traditional French spirit polishing for intricate Burma teak woodwork and mandir. Sahani Interiors master polishers preserved the natural amber grain and gave it a royal luster with protective melamine sealing.',
+      tag: 'Heritage Wood Craft',
+    },
+    {
+      name: 'Sunita & Suresh Patil',
+      locality: 'Dadar',
+      property: 'Hydraulic Storage Bed & Marble Diamond Polish',
+      rating: 5,
+      content:
+        'Outstanding craftsmanship on our master bedroom hydraulic bed in Dadar. Their 7-stage Klindex diamond abrasive polishing gave our 12-year-old Italian marble floor an optical mirror reflection. Transparent billing and true professionals.',
       tag: 'Bespoke Woodwork & Flooring',
+    },
+    {
+      name: 'Natasha Fernandez',
+      locality: 'Bandra',
+      property: 'Bespoke Fluted Wardrobe & Custom Seating',
+      rating: 5,
+      content:
+        'Top-shelf luxury standards in Bandra! German Hafele soft-close hardware on floor-to-ceiling sliding wardrobes with tinted fluted glass and warm sensor LEDs. Their custom-made bouclé armchair is our favorite piece in the home.',
+      tag: 'Luxury Residence',
+    },
+    {
+      name: 'Deepak Malhotra',
+      locality: 'Andheri',
+      property: 'Turnkey 3 BHK Painting, PU Polish & Lamination',
+      rating: 5,
+      content:
+        'Supervised by thorough professionals for our flat in Andheri West. The 1.5mm anti-scratch matte lamination on our modular wardrobes and high-gloss PU polish on the TV unit are pristine. No mess, on-time handover.',
+      tag: 'Turnkey Interior',
+    },
+    {
+      name: 'Ananya Merchant',
+      locality: 'Prabhadevi',
+      property: 'Artisan Italian Venetian Stucco & Texture Accent',
+      rating: 5,
+      content:
+        'The handcrafted Italian Venetian lime plaster accent wall in our Prabhadevi living room catches the coastal evening light gorgeously. The artisans were punctual, respectful, and delivered exactly what was promised in the 3D visualizer.',
+      tag: 'Designer Statement',
+    },
+    {
+      name: 'Cyrus Mistry',
+      locality: 'Churhgate',
+      property: 'Heritage Apartment Painting & Wood Finishes',
+      rating: 5,
+      content:
+        'Outstanding attention to detail and punctuality for our apartment in Churhgate (Churchgate). Zero plaster dust, daily milestone tracking, and transparent MSME credentials. The royal finish exceeded our expectations.',
+      tag: 'Heritage Homeowner',
     },
   ];
 
@@ -61,7 +111,7 @@ export const ReviewsSection: React.FC = () => {
             Trusted by Homeowners & Architects
           </h2>
           <p className="mt-3 text-slate-400 text-sm sm:text-base leading-relaxed">
-            Read authentic experiences from homeowners in Royal Garden Complex, Evershine City, and across residential communities.
+            Read authentic reviews from homeowners across Santacruz, Powai, Kurla, Malad, Mumbadevi, Dadar, Bandra, Andheri, Prabhadevi, and Churchgate.
           </p>
         </div>
 
@@ -125,8 +175,9 @@ export const ReviewsSection: React.FC = () => {
                   <div className="text-[11px] font-mono text-[#009FE3] font-medium">
                     {rev.property}
                   </div>
-                  <div className="text-[10px] text-slate-500 mt-0.5">
-                    {rev.date}
+                  <div className="text-[10px] text-emerald-400/90 mt-0.5 flex items-center justify-end gap-1 font-mono">
+                    <CheckCircle2 className="w-3 h-3 text-emerald-400" />
+                    <span>Verified Project</span>
                   </div>
                 </div>
               </div>

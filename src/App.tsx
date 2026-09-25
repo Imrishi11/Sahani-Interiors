@@ -5,7 +5,6 @@ import { Hero } from './components/Hero';
 import { ServicesSection } from './components/ServicesSection';
 import { ColorStudio } from './components/ColorStudio';
 import { ProcessSection } from './components/ProcessSection';
-import { PortfolioSection } from './components/PortfolioSection';
 import { EnquirySection } from './components/EnquirySection';
 import { ReviewsSection } from './components/ReviewsSection';
 import { Footer } from './components/Footer';
@@ -59,12 +58,7 @@ export default function App() {
         {/* 4. 5-Step Frictionless Process */}
         <ProcessSection />
 
-        {/* 5. Real Project Portfolio & Before/After Makeover Slider */}
-        <PortfolioSection
-          onOpenEnquiry={handleOpenEnquiry}
-        />
-
-        {/* 6. Custom Quotation Section (#quotation) - Main quotation destination */}
+        {/* 5. Custom Quotation Section (#quotation) - Main quotation destination */}
         <EnquirySection
           prefilledService={selectedServiceForModal}
         />

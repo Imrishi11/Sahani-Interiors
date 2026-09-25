@@ -45,12 +45,11 @@ export const EnquirySection: React.FC<EnquirySectionProps> = ({ prefilledService
     return encodeURIComponent(
       `*QUOTATION REQUEST - SAHANI INTERIORS*\n` +
       `━━━━━━━━━━━━━━━━━━━━━━━━\n` +
-      `👤 *Client Name:* ${formData.fullName || 'Homeowner'}\n` +
+      `👤 *Customer Name:* ${formData.fullName || 'Homeowner'}\n` +
       `📞 *Phone:* ${formData.phone || 'Not provided'}\n` +
       `🛠️ *Service Required:* ${formData.serviceType}\n` +
       `🏠 *Property Type:* ${formData.propertyType}\n` +
       `📍 *Client Address:* ${formData.address || 'Address provided on call'}\n` +
-      `⏱️ *Preferred Timeline:* ${formData.timeline}\n` +
       `📝 *Notes/Requirements:* ${formData.message || 'Please share detailed quotation'}\n` +
       `━━━━━━━━━━━━━━━━━━━━━━━━\n` +
       `Please provide quotation & schedule a visit.`
@@ -58,7 +57,7 @@ export const EnquirySection: React.FC<EnquirySectionProps> = ({ prefilledService
   };
 
   const handleSendWhatsApp = () => {
-    const url = `https://wa.me/918268727572?text=${generateWhatsappMessage()}`;
+    const url = `https://wa.me/918956216889?text=${generateWhatsappMessage()}`;
     window.open(url, '_blank', 'noopener,noreferrer');
   };
 
@@ -111,14 +110,23 @@ export const EnquirySection: React.FC<EnquirySectionProps> = ({ prefilledService
                   <div>
                     <strong className="text-white block mb-0.5">Direct Telephones:</strong>
                     <div className="flex items-center gap-3">
-                      <a href="tel:8268727572" className="text-[#009FE3] font-semibold hover:underline font-mono">
-                        8268727572
-                      </a>
-                      <span className="text-slate-600">|</span>
-                      <a href="tel:9324332784" className="text-[#009FE3] font-semibold hover:underline font-mono">
-                        9324332784
+                      <a href="tel:8956216889" className="text-[#009FE3] font-semibold hover:underline font-mono text-sm">
+                        89562 16889
                       </a>
                     </div>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <Mail className="w-4 h-4 text-[#009FE3] shrink-0 mt-0.5" />
+                  <div>
+                    <strong className="text-white block mb-0.5">Official Email:</strong>
+                    <a
+                      href="mailto:sahaniinteriors98@gmail.com"
+                      className="text-[#009FE3] font-medium hover:underline text-xs break-all"
+                    >
+                      sahaniinteriors98@gmail.com
+                    </a>
                   </div>
                 </div>
 
@@ -134,7 +142,7 @@ export const EnquirySection: React.FC<EnquirySectionProps> = ({ prefilledService
               {/* Direct WhatsApp Callout */}
               <div className="pt-4 border-t border-slate-800">
                 <a
-                  href={`https://wa.me/918268727572?text=${encodeURIComponent('Hello Sahani Interiors! I would like to request an instant quotation for my home.')}`}
+                  href={`https://wa.me/918956216889?text=${encodeURIComponent('Hello Sahani Interiors! I would like to request an instant quotation for my home.')}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full py-2.5 px-4 rounded-xl bg-emerald-600/20 hover:bg-emerald-600 text-emerald-400 hover:text-white border border-emerald-500/30 text-xs font-bold transition-all flex items-center justify-center gap-2"
@@ -166,10 +174,10 @@ export const EnquirySection: React.FC<EnquirySectionProps> = ({ prefilledService
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {/* Full Name */}
+                    {/* Customer Name */}
                     <div>
                       <label className="block text-xs font-semibold text-slate-300 mb-1.5">
-                        Your Full Name <span className="text-[#E5007D]">*</span>
+                        Customer Name <span className="text-[#E5007D]">*</span>
                       </label>
                       <input
                         type="text"
@@ -196,7 +204,7 @@ export const EnquirySection: React.FC<EnquirySectionProps> = ({ prefilledService
                           maxLength={10}
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value.replace(/\D/g, '') })}
-                          placeholder="82687 27572"
+                          placeholder="89562 16889"
                           className="w-full pl-12 pr-3.5 py-2.5 bg-slate-900 border border-slate-700 rounded-lg text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#009FE3] focus:ring-1 focus:ring-[#009FE3]"
                         />
                       </div>
@@ -215,6 +223,10 @@ export const EnquirySection: React.FC<EnquirySectionProps> = ({ prefilledService
                         className="w-full px-3 py-2.5 bg-slate-900 border border-slate-700 rounded-lg text-xs text-white focus:outline-none focus:border-[#009FE3]"
                       >
                         <option value="Master House Painting & Finishes">Master House Painting & Finishes</option>
+                        <option value="PU Polish (Polyurethane Luxury Wood Polish)">PU Polish (Polyurethane Luxury Wood Polish)</option>
+                        <option value="Hand Polish & Traditional Spirit Polish">Hand Polish & Traditional Spirit Polish</option>
+                        <option value="Architectural Surface Lamination & Edging">Architectural Surface Lamination & Edging</option>
+                        <option value="Decco (Duco) Spray Paint & Lacquer Finish">Decco (Duco) Spray Paint & Lacquer Finish</option>
                         <option value="Artisan Wall Textures & Italian Stucco">Artisan Wall Textures & Italian Stucco</option>
                         <option value="Scientific Waterproofing & Seepage Defense">Scientific Waterproofing & Seepage Defense</option>
                         <option value="Exterior Weatherproof Painting">Exterior Weatherproof Painting</option>
@@ -266,37 +278,18 @@ export const EnquirySection: React.FC<EnquirySectionProps> = ({ prefilledService
                     </p>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {/* Timeline */}
-                    <div>
-                      <label className="block text-xs font-semibold text-slate-300 mb-1.5">
-                        Preferred Start Timeline
-                      </label>
-                      <select
-                        value={formData.timeline}
-                        onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
-                        className="w-full px-3 py-2.5 bg-slate-900 border border-slate-700 rounded-lg text-xs text-white focus:outline-none focus:border-[#009FE3]"
-                      >
-                        <option value="Immediately (Within 3 Days)">Immediately (Within 3 Days)</option>
-                        <option value="Within 2 Weeks">Within 2 Weeks</option>
-                        <option value="Next Month">Next Month</option>
-                        <option value="Planning Stage / Getting Quotes">Planning Stage / Getting Quotes</option>
-                      </select>
-                    </div>
-
-                    {/* Email (Optional) */}
-                    <div>
-                      <label className="block text-xs font-semibold text-slate-300 mb-1.5">
-                        Email Address (Optional)
-                      </label>
-                      <input
-                        type="email"
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        placeholder="client@example.com"
-                        className="w-full px-3.5 py-2.5 bg-slate-900 border border-slate-700 rounded-lg text-xs text-white placeholder-slate-500 focus:outline-none focus:border-[#009FE3]"
-                      />
-                    </div>
+                  {/* Email (Optional) */}
+                  <div>
+                    <label className="block text-xs font-semibold text-slate-300 mb-1.5">
+                      Email Address (Optional)
+                    </label>
+                    <input
+                      type="email"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      placeholder="client@example.com"
+                      className="w-full px-3.5 py-2.5 bg-slate-900 border border-slate-700 rounded-lg text-xs text-white placeholder-slate-500 focus:outline-none focus:border-[#009FE3]"
+                    />
                   </div>
 
                   {/* Notes / Special Requests */}

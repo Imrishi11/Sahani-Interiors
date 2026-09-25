@@ -5,7 +5,7 @@ export interface EnquiryFormData {
   address: string;
   serviceType: string;
   propertyType: string;
-  timeline: string;
+  timeline?: string;
   message?: string;
 }
 

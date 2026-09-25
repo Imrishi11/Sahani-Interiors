@@ -22,6 +22,9 @@ import exteriorImg from '../assets/images/portfolio_exterior_villa_1790217472301
 import sofaImg from '../assets/images/luxury_sofa_upholstery_1790218914307.jpg';
 import furnitureImg from '../assets/images/bespoke_custom_furniture_1790218927692.jpg';
 import flooringImg from '../assets/images/luxury_flooring_marble_1790218940171.jpg';
+import puDeccoImg from '../assets/images/pu_decco_polish_1790308734839.jpg';
+import handPolishImg from '../assets/images/hand_polish_wood_1790308750624.jpg';
+import laminationImg from '../assets/images/luxury_lamination_1790308768544.jpg';
 
 interface ServicesSectionProps {
   onSelectService: (serviceName: string) => void;
@@ -58,7 +61,111 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
       ],
       idealFor: '1 BHK, 2 BHK, 3 BHK apartments, duplexes, bungalows & luxury villas',
     },
-    // 2. SOFA SECTION: Detailed like painting
+    // 2. PU POLISH: Italian Polyurethane Luxury Finish
+    {
+      id: 'pu-polish',
+      category: 'painting',
+      pillar: 'painting',
+      title: 'PU Polish (Polyurethane Luxury Finish)',
+      badge: 'ITALIAN WOOD CRAFT',
+      highlightBadge: 'High-Gloss Mirror & Satin Matte',
+      image: puDeccoImg,
+      description:
+        'Specialized Italian polyurethane (PU) spray polish application for main doors, veneer wall paneling, dining tables, and fine cabinetry. Non-yellowing formula with superior scratch and heat shielding.',
+      features: [
+        'Multi-coat Italian PU (ICA / Sirca / Asian Paints Aquadur) with dust-controlled booth curing',
+        'Available in 100% Optical High-Gloss mirror sheen, Soft Satin, and Silky Deep Matte finishes',
+        'Aliphatic non-yellowing resins preserve natural veneer tones and grain depth without fading',
+        'Impervious barrier against hot beverages, water droplets, alcohol spills, and daily scratches',
+        'Mechanized pneumatic HVLP spray gun application ensuring seamless micro-fine atomization',
+      ],
+      specifications: [
+        { label: 'Chemical System', value: '2-Component Aliphatic Polyurethane (PU)' },
+        { label: 'Sheen Variants', value: '100% Mirror High-Gloss, Satin Sheen & Matt' },
+        { label: 'Resistances', value: 'UV Stable, Non-Yellowing, Heat & Stain Proof' },
+        { label: 'Target Timber', value: 'Natural Wood Veneers, Solid Teak & Marine Ply' },
+      ],
+      idealFor: 'Entrance doors, veneer living room panelling, dining tables & luxury cabinetry',
+    },
+    // 3. HAND POLISH: Traditional French Spirit & Teak Polishing
+    {
+      id: 'hand-polish',
+      category: 'painting',
+      pillar: 'painting',
+      title: 'Hand Polish & French Spirit Polishing',
+      badge: 'HERITAGE WOOD CRAFT',
+      highlightBadge: 'Natural Burma Teak Grain Revitalization',
+      image: handPolishImg,
+      description:
+        'Artisanal French spirit polishing and traditional hand burnishing performed by master ustads. Draws out organic wood-grain depth, rich amber luster, and the timeless beauty of natural solid timber.',
+      features: [
+        'Traditional multi-coat French polishing using natural dewaxed shellac and button lac burnishing',
+        'Pore-filling technique with fine pumice stone and circular pad rubbing for glass-like organic touch',
+        'Enhances the raw amber depth, golden reflections, and fiddleback curl of Burma teak & rosewood',
+        'Non-toxic, low-odor organic finishing that allows natural hardwoods to breathe without cracking',
+        'Protective melamine sealer topcoat option to guard against coastal humidity and everyday spills',
+      ],
+      specifications: [
+        { label: 'Technique', value: 'Artisan Multi-Layer Circular Pad Hand Rubbing' },
+        { label: 'Core Resins', value: 'Natural Dewaxed Shellac, Button Lac & Spirit Base' },
+        { label: 'Surface Tactile', value: 'Ultra-Smooth Organic Wood-Grain Warmth' },
+        { label: 'Protection Coat', value: 'Melamine Hard-Seal Top Barrier against Moisture' },
+      ],
+      idealFor: 'Solid teak doors, heritage temple units (mandir), antique consoles & handcrafted dining chairs',
+    },
+    // 4. LAMINATION: Surface Lamination & Precision Edge Banding
+    {
+      id: 'surface-lamination',
+      category: 'painting',
+      pillar: 'painting',
+      title: 'Architectural Surface Lamination',
+      badge: 'SURFACE ARCHITECTURE',
+      highlightBadge: '1.0mm / 1.5mm High-Pressure Laminates',
+      image: laminationImg,
+      description:
+        'Bubble-free hydraulic and manual cold-press decorative lamination for wardrobes, internal partitions, and cabinetry. Seamless edge banding with heat-melt adhesives for 100% moisture protection.',
+      features: [
+        '1.0mm to 1.5mm High-Pressure Decorative Laminates (Merino, Century, Greenlam & Stylam)',
+        'Zero-bubble cold-press roller adhesion using premium marine-grade water-resistant synthetic resin',
+        'Precision machine PVC/acrylic edge-banding with heat-melt adhesives preventing water ingress',
+        'Anti-fingerprint, scratch-resistant velvet matte, synchronized woodgrains, and high-gloss acrylics',
+        'Fluted laminates, metallic foils, and stone-finish decorative sheets for designer accent features',
+      ],
+      specifications: [
+        { label: 'Laminate Thickness', value: '1.0mm - 1.5mm High Pressure Decorative Laminates (HPL)' },
+        { label: 'Adhesive Standard', value: 'Water-Resistant Synthetic PVA Resin (Fevicol Marine)' },
+        { label: 'Edge Banding', value: '0.8mm - 2mm Seamless Machine PVC / ABS Trim' },
+        { label: 'Performance', value: '100% Termite Proof, Anti-Scratch & Anti-Bacterial' },
+      ],
+      idealFor: 'Floor-to-ceiling wardrobes, modular cabinets, study desks, vanity units & wall paneling',
+    },
+    // 5. DECCO / DUCO: Automotive-Grade Spray Paint & Lacquer
+    {
+      id: 'decco-finish',
+      category: 'painting',
+      pillar: 'painting',
+      title: 'Decco (Duco) Spray Paint & Lacquer',
+      badge: 'PORCELAIN FINISH',
+      highlightBadge: 'Automotive-Grade Monolithic Sheen',
+      image: puDeccoImg,
+      description:
+        'High-pressure pneumatic spray application of nitrocellulose and acrylic Duco / Decco paint. Produces a continuous, monolithic porcelain-smooth finish with zero brushmarks on doors, moldings, and MDF carpentry.',
+      features: [
+        'Industrial HVLP pneumatic spray application for an ultra-flat, glass-smooth monolithic coat',
+        'Thorough multi-layer NC putty leveling with microscopic water-abrasive wet sanding',
+        'Extensive shade customization across Asian Paints, RAL, and NCS international color fans',
+        'Razor-sharp crisp edge finishing on intricate CNC jali screens, fluted panels, and French boiserie moldings',
+        'Durable clear lacquer top coat resistant to chipping, yellowing, and frequent daily wiping',
+      ],
+      specifications: [
+        { label: 'Formulation', value: 'Fast-Drying Automotive Acrylic / NC Duco Lacquer' },
+        { label: 'Application Tech', value: 'High-Volume Low-Pressure (HVLP) Pneumatic Spray' },
+        { label: 'Surface Texture', value: 'Brushmark-Free Porcelain Smoothness' },
+        { label: 'Color Variety', value: 'Unlimited Custom Color Curation (Matte / Satin / Gloss)' },
+      ],
+      idealFor: 'Internal flush doors, CNC decorative partitions, French moldings, vanity cabinets & kids\' furniture',
+    },
+    // 6. SOFA SECTION: Detailed like painting
     {
       id: 'sofa-craft',
       category: 'sofa',
@@ -245,13 +352,13 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
   // Detailed Specifications for the 4 Main Pillars
   const craftsmanshipPillars = {
     painting: {
-      title: 'Master House Painting & Finishes',
-      subtitle: 'Mechanized Precision & Asian Paints Royale Standards',
+      title: 'Painting & Architectural Wood Finishes',
+      subtitle: 'Mechanized Emulsions, PU Polish, Hand Polish, Decco & Lamination',
       points: [
-        { label: 'Surface Prep', detail: 'Mechanized suction sanding that captures fine plaster particles, followed by acrylic micro-putty.' },
-        { label: 'Moisture Testing', detail: 'Non-invasive digital laser moisture audit of every wall before applying primer.' },
-        { label: 'Paints Used', detail: 'Asian Paints Royale Aspira, Berger Silk Luxury, and Italian Venetian lime plaster.' },
-        { label: 'Site Masking', detail: 'Full protective plastic tarps for Italian marble, vitrified tiles, furniture, and switchboards.' },
+        { label: 'Mechanized House Painting', detail: 'Dust-free suction vacuum sanding, digital laser moisture scanning & Asian Paints Royale Aspira / Berger Silk.' },
+        { label: 'PU Polish (Italian Polyurethane)', detail: 'Pneumatic spray application in 100% mirror High-Gloss and deep Satin Matte with zero yellowing & UV shielding.' },
+        { label: 'Hand Polish & French Spirit', detail: 'Traditional master artisan French spirit and shellac pad rubbing to revive Burma teak grain depth and luster.' },
+        { label: 'Decco Spray & Lamination', detail: 'Automotive-grade porcelain Decco spray lacquer & 1.0mm/1.5mm bubble-free high-pressure lamination with machine edging.' },
       ],
     },
     sofa: {
@@ -326,7 +433,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                   : 'text-slate-400 hover:text-white'
               }`}
             >
-              Painting & Walls
+              Painting, Polish & Finishes
             </button>
             <button
               onClick={() => setActiveTab('sofa')}
@@ -543,7 +650,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
               }`}
             >
               <Paintbrush className="w-3.5 h-3.5" />
-              <span>House Painting</span>
+              <span>Painting & Finishes</span>
             </button>
             <button
               onClick={() => setActiveSpecPillar('sofa')}

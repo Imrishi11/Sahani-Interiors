@@ -42,15 +42,14 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
   const getWhatsappUrl = () => {
     const text = encodeURIComponent(
       `*QUOTATION REQUEST - SAHANI INTERIORS*\n` +
-      `👤 *Name:* ${formData.fullName || 'Homeowner'}\n` +
+      `👤 *Customer Name:* ${formData.fullName || 'Homeowner'}\n` +
       `📞 *Phone:* ${formData.phone || 'Provided'}\n` +
       `🛠️ *Service:* ${formData.serviceType}\n` +
       `🏠 *Property:* ${formData.propertyType}\n` +
       `📍 *Address:* ${formData.address || 'To be shared'}\n` +
-      `⏱️ *Timeline:* ${formData.timeline}\n` +
       `📝 *Notes:* ${formData.message || 'Please provide quotation'}`
     );
-    return `https://wa.me/918268727572?text=${text}`;
+    return `https://wa.me/918956216889?text=${text}`;
   };
 
   return (
@@ -85,7 +84,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label className="block text-xs font-medium text-slate-300 mb-1">
-                  Full Name <span className="text-[#E5007D]">*</span>
+                  Customer Name <span className="text-[#E5007D]">*</span>
                 </label>
                 <input
                   type="text"
@@ -111,7 +110,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
                     maxLength={10}
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value.replace(/\D/g, '') })}
-                    placeholder="82687 27572"
+                    placeholder="89562 16889"
                     className="w-full pl-12 pr-3.5 py-2.5 bg-slate-900 border border-slate-700 rounded-lg text-xs text-white placeholder-slate-500 focus:outline-none focus:border-[#009FE3]"
                   />
                 </div>
@@ -127,7 +126,11 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
                     onChange={(e) => setFormData({ ...formData, serviceType: e.target.value })}
                     className="w-full px-3 py-2.5 bg-slate-900 border border-slate-700 rounded-lg text-xs text-white focus:outline-none focus:border-[#009FE3]"
                   >
-                    <option value="Master House Painting & Finishes">Master House Painting & Finishes</option>
+                    <option value="Master House Painting & Finishes">House Painting</option>
+                    <option value="PU Polish (Polyurethane Luxury Finish)">PU Polish (High Gloss/Matte)</option>
+                    <option value="Hand Polish & Spirit Polish">Hand Polish (French Polish)</option>
+                    <option value="Architectural Surface Lamination">Surface Lamination</option>
+                    <option value="Decco (Duco) Spray Paint & Lacquer">Decco (Duco) Spray Finish</option>
                     <option value="Artisan Wall Textures & Italian Stucco">Wall Textures & Stucco</option>
                     <option value="Scientific Waterproofing & Seepage Defense">Scientific Waterproofing</option>
                     <option value="Exterior Weatherproof Painting">Exterior Painting</option>

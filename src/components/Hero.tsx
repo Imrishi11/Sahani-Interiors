@@ -22,6 +22,7 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ onOpenEnquiry, onScrollToQuotation }) => {
+  const [quickName, setQuickName] = useState('');
   const [quickPhone, setQuickPhone] = useState('');
   const [quickService, setQuickService] = useState('Master House Painting & Finishes');
   const [quickAddress, setQuickAddress] = useState('');
@@ -29,7 +30,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEnquiry, onScrollToQuotation }
 
   const handleQuickLead = (e: React.FormEvent) => {
     e.preventDefault();
-    if (quickPhone.length >= 10 && quickAddress.trim()) {
+    if (quickName.trim() && quickPhone.length >= 10 && quickAddress.trim()) {
       setSubmittedQuick(true);
     }
   };
@@ -37,12 +38,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEnquiry, onScrollToQuotation }
   const handleQuickWhatsApp = () => {
     const text = encodeURIComponent(
       `Hello Sahani Interiors! I would like an itemized quotation.\n` +
+      `• Customer Name: ${quickName || 'Homeowner'}\n` +
       `• Mobile: ${quickPhone || 'Not provided'}\n` +
       `• Service: ${quickService}\n` +
-      `• Property Address: ${quickAddress || 'Virar/Vasai/Mumbai'}\n` +
+      `• Property Address: ${quickAddress || 'Mumbai'}\n` +
       `Please contact me to schedule a measurement visit.`
     );
-    window.open(`https://wa.me/918268727572?text=${text}`, '_blank');
+    window.open(`https://wa.me/918956216889?text=${text}`, '_blank');
   };
 
   return (
@@ -159,6 +161,20 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEnquiry, onScrollToQuotation }
                 <form onSubmit={handleQuickLead} className="mt-5 space-y-3.5">
                   <div>
                     <label className="block text-xs font-medium text-slate-300 mb-1">
+                      Customer Name <span className="text-[#E5007D]">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      value={quickName}
+                      onChange={(e) => setQuickName(e.target.value)}
+                      placeholder="e.g. Rishi Sahani"
+                      className="w-full px-3.5 py-2.5 bg-slate-900 border border-slate-700 rounded-lg text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#009FE3] focus:ring-1 focus:ring-[#009FE3]"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-medium text-slate-300 mb-1">
                       Your Mobile Number <span className="text-[#E5007D]">*</span>
                     </label>
                     <div className="relative">
@@ -171,7 +187,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEnquiry, onScrollToQuotation }
                         maxLength={10}
                         value={quickPhone}
                         onChange={(e) => setQuickPhone(e.target.value.replace(/\D/g, ''))}
-                        placeholder="82687 27572"
+                        placeholder="89562 16889"
                         className="w-full pl-12 pr-4 py-2.5 bg-slate-900 border border-slate-700 rounded-lg text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#009FE3] focus:ring-1 focus:ring-[#009FE3]"
                       />
                     </div>
@@ -187,6 +203,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEnquiry, onScrollToQuotation }
                       className="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-xs text-white focus:outline-none focus:border-[#009FE3]"
                     >
                       <option value="Master House Painting & Finishes">Master House Painting & Finishes</option>
+                      <option value="PU Polish (Polyurethane Luxury Finish)">PU Polish (Polyurethane Luxury Finish)</option>
+                      <option value="Hand Polish & French Spirit Polish">Hand Polish & French Spirit Polish</option>
+                      <option value="Architectural Surface Lamination">Architectural Surface Lamination</option>
+                      <option value="Decco (Duco) Spray Paint & Lacquer">Decco (Duco) Spray Paint & Lacquer</option>
                       <option value="Luxury Sofas & Custom Upholstery">Luxury Sofas & Custom Upholstery</option>
                       <option value="Bespoke Furniture & Custom Woodcraft">Bespoke Furniture & Custom Woodcraft</option>
                       <option value="Architectural Flooring & Marble Polishing">Architectural Flooring & Marble Polishing</option>
@@ -229,9 +249,14 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEnquiry, onScrollToQuotation }
                     </button>
                   </div>
 
-                  <p className="text-[11px] text-center text-slate-400">
-                    Direct helpline: <a href="tel:8268727572" className="text-[#009FE3] hover:underline font-semibold">82687 27572</a> / <a href="tel:9324332784" className="text-[#009FE3] hover:underline font-semibold">93243 32784</a>
-                  </p>
+                  <div className="pt-1 text-[11px] text-center text-slate-400 space-y-0.5">
+                    <p>
+                      Direct helpline: <a href="tel:8956216889" className="text-[#009FE3] hover:underline font-semibold font-mono">89562 16889</a>
+                    </p>
+                    <p className="text-[10px] text-slate-500">
+                      Email: <a href="mailto:sahaniinteriors98@gmail.com" className="text-slate-400 hover:text-[#009FE3] underline">sahaniinteriors98@gmail.com</a>
+                    </p>
+                  </div>
                 </form>
               ) : (
                 <div className="mt-5 py-6 text-center space-y-3">
@@ -240,7 +265,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEnquiry, onScrollToQuotation }
                   </div>
                   <h4 className="text-base font-bold text-white font-display">Quotation Request Received!</h4>
                   <p className="text-xs text-slate-300 leading-relaxed">
-                    Thank you. Our project team will call <span className="font-mono text-white">+91-{quickPhone}</span> shortly to coordinate your consultation.
+                    Thank you, <strong className="text-white">{quickName}</strong>. Our project team will call <span className="font-mono text-white">+91-{quickPhone}</span> shortly to coordinate your consultation.
                   </p>
                   <div className="flex justify-center gap-2 pt-1">
                     <button

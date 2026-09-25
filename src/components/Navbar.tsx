@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Phone, Menu, X, Sparkles, Paintbrush } from 'lucide-react';
+import { Phone, Mail, Menu, X, Sparkles, Paintbrush } from 'lucide-react';
 import { BrandLogo } from './BrandLogo';
 
 interface NavbarProps {
@@ -23,7 +23,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiry, onOpenChat }) => 
     { label: 'Services', href: '#services' },
     { label: 'Color Studio', href: '#color-studio' },
     { label: '5-Step Process', href: '#process' },
-    { label: 'Portfolio', href: '#portfolio' },
     { label: 'Reviews', href: '#reviews' },
     { label: 'Enquiry & Quote', href: '#enquiry' },
   ];
@@ -61,20 +60,37 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiry, onOpenChat }) => 
               ))}
             </nav>
 
-            {/* Zone 3: Direct Phone Contact */}
-            <div className="hidden sm:flex items-center gap-3">
+            {/* Zone 3: Direct Phone & Email Contact */}
+            <div className="hidden sm:flex items-center gap-2 lg:gap-3">
               <a
-                href="tel:8268727572"
+                href="mailto:sahaniinteriors98@gmail.com"
+                className="hidden xl:flex items-center gap-1.5 px-2.5 py-1.5 text-xs text-slate-300 hover:text-white bg-slate-900/80 border border-slate-800 rounded-lg hover:border-[#009FE3] transition-all font-sans"
+                title="Email Sahani Interiors"
+              >
+                <Mail className="w-3.5 h-3.5 text-[#009FE3]" />
+                <span className="text-[11px]">sahaniinteriors98@gmail.com</span>
+              </a>
+
+              <a
+                href="tel:8956216889"
                 className="flex items-center gap-2 px-3 py-2 text-xs font-semibold text-slate-200 hover:text-white bg-slate-900/90 border border-slate-700/80 rounded-lg hover:border-[#009FE3] transition-all font-mono shadow-sm"
                 title="Call Sahani Interiors Helpline"
               >
                 <Phone className="w-3.5 h-3.5 text-[#009FE3]" />
-                <span className="tracking-wide">82687 27572</span>
+                <span className="tracking-wide">89562 16889</span>
               </a>
             </div>
 
             {/* Mobile Menu & Quick Chat Buttons */}
             <div className="flex items-center gap-2 lg:hidden">
+              <a
+                href="tel:8956216889"
+                className="p-2 text-slate-300 hover:text-white bg-slate-800/80 border border-slate-700 rounded-lg sm:hidden"
+                aria-label="Call Sahani Interiors"
+                title="Call 89562 16889"
+              >
+                <Phone className="w-4 h-4 text-[#009FE3]" />
+              </a>
               <button
                 onClick={onOpenChat}
                 className="p-2 text-slate-300 hover:text-white bg-slate-800/80 border border-slate-700 rounded-lg"
@@ -115,24 +131,34 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiry, onOpenChat }) => 
               ))}
             </div>
 
-            <div className="pt-2 border-t border-slate-800 flex items-center justify-between">
+            <div className="pt-2 border-t border-slate-800 space-y-2">
+              <div className="flex items-center justify-between">
+                <a
+                  href="tel:8956216889"
+                  className="flex items-center gap-2 text-xs font-semibold text-slate-300 hover:text-white"
+                >
+                  <Phone className="w-3.5 h-3.5 text-[#009FE3]" />
+                  <span className="font-mono">89562 16889</span>
+                </a>
+                <button
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    onOpenChat();
+                  }}
+                  className="text-xs text-[#009FE3] font-semibold flex items-center gap-1"
+                >
+                  <Sparkles className="w-3.5 h-3.5" />
+                  <span>Your Assistant</span>
+                </button>
+              </div>
+
               <a
-                href="tel:8268727572"
-                className="flex items-center gap-2 text-xs font-semibold text-slate-300 hover:text-white"
+                href="mailto:sahaniinteriors98@gmail.com"
+                className="flex items-center gap-2 text-xs text-slate-400 hover:text-white pt-1"
               >
-                <Phone className="w-3.5 h-3.5 text-[#009FE3]" />
-                <span className="font-mono">82687 27572</span>
+                <Mail className="w-3.5 h-3.5 text-[#009FE3]" />
+                <span className="text-[11px] truncate">sahaniinteriors98@gmail.com</span>
               </a>
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onOpenChat();
-                }}
-                className="text-xs text-[#009FE3] font-semibold flex items-center gap-1"
-              >
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>Your Assistant</span>
-              </button>
             </div>
           </div>
         )}
